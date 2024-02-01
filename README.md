@@ -12,3 +12,22 @@ this is the readme for urbangreenspaces
 2. SELECT name, ST_Transform(ST_Centroid(way),4326)as Iocn, ST_Area(way)
 3. FROM planet_osm_polygon
 4. WHERE leisure = 'park';
+# Command 3
+1. SELECT SUM(ST_Area(way)) as total_green_space_area
+2. FROM planet_osm_polygon
+3. WHERE leisure = 'park';
+Command 3 output: total green space area is 48643509.48422989
+
+# February 1 queries
+# query 1
+1. SELECT osm_id, name, way as city_boundary
+2. FROM planet_osm_polygon
+3. WHERE place = 'city'
+4. ORDER BY name;
+# query 2
+1. SELECT distinct leisure
+2. FROM planet_osm_polygon
+3. --WHERE place = 'city'
+4. --ORDER BY name;
+
+
